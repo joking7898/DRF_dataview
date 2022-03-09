@@ -12,6 +12,7 @@ class NaverData(models.Model):
     crawl_url = models.TextField()
     view_cnt = models.IntegerField()
     comment_cnt = models.IntegerField()
+    like_cnt = models.IntegerField()
 
     class Meta:
         managed = True

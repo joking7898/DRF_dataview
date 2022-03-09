@@ -9,7 +9,8 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import datetime
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -20,7 +21,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = ''
+SECRET_KEY = 'django-insecure-51teud&0ikhl1ri(krvli2#*9rihb_^(2w1h&2a$7jc@ekbhsn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -37,8 +38,39 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'naver_data'
+    'naver_data',
+    # 'allauth',
+    # 'allauth.account',
+    # 'allauth.socialaccount',
+    # 'django.contrib.sites',
 ]
+
+
+# ## DRF
+# REST_FRAMEWORK = {
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.IsAuthenticated',  # 인증된 사용자만 접근 가능
+#         'rest_framework.permissions.IsAdminUser',  # 관리자만 접근 가능
+#         'rest_framework.permissions.AllowAny',  # 누구나 접근 가능
+#     ),
+#
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+#         # 'rest_framework.authentication.TokenAuthentication',
+#         # 'rest_framework.authentication.SessionAuthentication',
+#         # 'rest_framework.authentication.BasicAuthentication',
+#     ),
+# }
+#
+# # 추가적인 JWT_AUTH 설젇
+# JWT_AUTH = {
+#     'JWT_SECRET_KEY': SECRET_KEY,
+#     'JWT_ALGORITHM': 'HS256',  # 암호화 알고리즘
+#     'JWT_ALLOW_REFRESH': True,  # refresh 사용 여부
+#     'JWT_EXPIRATION_DELTA': datetime.timedelta(days=7),  # 유효기간 설정
+#     'JWT_REFRESH_EXPIRATION_DELTA': datetime.timedelta(days=28),  # JWT 토큰 갱신 유효기간
+#     # import datetime 상단에 import 하기
+# }
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -80,7 +112,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'django_rest',
         'USER': 'postgres',
-        'PASSWORD': 'test1234!!',
+        # 'PASSWORD': 'test1234!!',
+        'PASSWORD': '!dmk1234',
         'HOST': 'localhost',
         'PORT': '5432'
     }
