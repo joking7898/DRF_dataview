@@ -7,7 +7,11 @@ from rest_framework.views import APIView
 from naver_data.models import NaverData
 from naver_data.serializer import NaverDataSerializer
 
-
+'''
+todo
+1. respose 관련 작업.
+2. 페이지넘김 처리.
+'''
 class NaverDataView(APIView):
     def get(self, request):
         serializer = NaverDataSerializer(data=request.query_params)
