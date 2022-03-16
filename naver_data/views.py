@@ -10,7 +10,6 @@ from rest_framework.views import APIView
 
 from naver_data.models import NaverData, NaverBlogData, NaverCafeData
 from naver_data.serializer import NaverDataSerializer
-from naver_data.util.pagenator import BlogListPaginationClass
 
 '''
 todo

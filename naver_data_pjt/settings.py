@@ -40,9 +40,9 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'naver_data',
     #accounts
-    'accounts',
     'rest_framework.authtoken',
-
+    'rest_framework_simplejwt',
+    'accounts',
 ]
 
 #유저 관련 풀 저장소 위치 테이블.
@@ -65,7 +65,7 @@ REST_FRAMEWORK = {
 
 
     'DEFAULT_AUTHENTICATION_CLASSES': (
-        'rest_framework_jwt.authentication.JSONWebTokenAuthentication',
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
         # 'rest_framework.authentication.TokenAuthentication',
         # 'rest_framework.authentication.SessionAuthentication',
         # 'rest_framework.authentication.BasicAuthentication',
